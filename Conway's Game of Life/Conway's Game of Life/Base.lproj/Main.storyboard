@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAb-Ez-PAh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Conway_s_Game_of_Life" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUg-Bw-hvE">
+                                <rect key="frame" x="118" y="185" width="178.5" height="35"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Generation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhk-ru-o2V">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="35"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvp-dn-ynk">
+                                        <rect key="frame" x="150" y="0.0" width="28.5" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1jW-uo-QbA"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Conways-Game" translatesAutoresizingMaskIntoConstraints="NO" id="907-k8-BND">
+                                <rect key="frame" x="50" y="80" width="314" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="SSB-xp-jtD"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXs-yw-ics">
+                                <rect key="frame" x="0.0" y="788" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Rvl-aN-RNg"/>
+                                    <barButtonItem title="Item" image="playpause" catalog="system" id="LZy-g4-TQY"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NHJ-h1-kdl"/>
+                                    <barButtonItem title="Item" image="stop" catalog="system" id="xlh-id-QX9"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gZb-XX-hQ4"/>
+                                </items>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GXs-yw-ics" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4CT-IW-ktG"/>
+                            <constraint firstItem="DUg-Bw-hvE" firstAttribute="top" secondItem="907-k8-BND" secondAttribute="bottom" constant="20" id="6IQ-Yd-Mkq"/>
+                            <constraint firstItem="DUg-Bw-hvE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F99-br-EBx"/>
+                            <constraint firstItem="907-k8-BND" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="Ns3-IS-Dqt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GXs-yw-ics" secondAttribute="bottom" constant="30" id="WAF-jr-xMF"/>
+                            <constraint firstAttribute="trailing" secondItem="907-k8-BND" secondAttribute="trailing" constant="50" id="XO5-ja-fmI"/>
+                            <constraint firstItem="907-k8-BND" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="80" id="k4M-5T-RQt"/>
+                            <constraint firstItem="GXs-yw-ics" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rnk-4j-V2O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EuB-3c-njz">
+                        <barButtonItem key="backBarButtonItem" title="Game of Life" id="8kf-KE-XL5"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="Qx8-IO-Z6n">
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="vqV-fe-Bqa" kind="show" id="nOs-NB-6KS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xOm-sq-QvA">
+            <objects>
+                <viewController id="vqV-fe-Bqa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Fd-49-BDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules" translatesAutoresizingMaskIntoConstraints="NO" id="774-02-Bgy">
+                                <rect key="frame" x="132" y="80" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="eQX-Uu-Hfq"/>
+                                    <constraint firstAttribute="height" constant="50" id="zGe-pt-qpI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About-This-Algorithm" translatesAutoresizingMaskIntoConstraints="NO" id="hWu-qB-Dib">
+                                <rect key="frame" x="20" y="540" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="7iR-ih-1cQ"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BCo-It-S0Z">
+                                <rect key="frame" x="20" y="577" width="374" height="285"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="285" id="b3X-x6-vSk"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BCo-It-S0Z" firstAttribute="top" secondItem="hWu-qB-Dib" secondAttribute="bottom" constant="2" id="57K-7T-c7s"/>
+                            <constraint firstItem="BCo-It-S0Z" firstAttribute="leading" secondItem="Ag2-8Z-sWr" secondAttribute="leading" constant="20" id="VK3-Tu-fzu"/>
+                            <constraint firstItem="Ag2-8Z-sWr" firstAttribute="trailing" secondItem="hWu-qB-Dib" secondAttribute="trailing" constant="20" id="dAi-zC-HWK"/>
+                            <constraint firstItem="774-02-Bgy" firstAttribute="top" secondItem="6Fd-49-BDQ" secondAttribute="top" constant="80" id="dor-h4-lag"/>
+                            <constraint firstItem="774-02-Bgy" firstAttribute="centerX" secondItem="6Fd-49-BDQ" secondAttribute="centerX" id="eGl-j8-Kh6"/>
+                            <constraint firstItem="BCo-It-S0Z" firstAttribute="bottom" secondItem="Ag2-8Z-sWr" secondAttribute="bottom" id="mId-lK-d3G"/>
+                            <constraint firstItem="Ag2-8Z-sWr" firstAttribute="trailing" secondItem="BCo-It-S0Z" secondAttribute="trailing" constant="20" id="wcH-fB-e55"/>
+                            <constraint firstItem="hWu-qB-Dib" firstAttribute="leading" secondItem="Ag2-8Z-sWr" secondAttribute="leading" constant="20" id="xLy-H2-shq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ag2-8Z-sWr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7Ap-U0-Gy5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdj-gl-kKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824.6376811594205" y="135.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8gz-jr-dfd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mAb-Ez-PAh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4tI-L5-F7W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EiP-Ji-s7d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xMz-E8-pKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="About-This-Algorithm" width="459" height="54"/>
+        <image name="Conways-Game" width="502" height="131"/>
+        <image name="Generation" width="150" height="34"/>
+        <image name="Rules" width="193" height="57"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="playpause" catalog="system" width="128" height="83"/>
+        <image name="stop" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
