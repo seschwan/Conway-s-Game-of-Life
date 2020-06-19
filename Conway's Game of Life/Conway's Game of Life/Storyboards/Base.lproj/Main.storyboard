@@ -40,7 +40,7 @@
                                 </constraints>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXs-yw-ics">
-                                <rect key="frame" x="0.0" y="699" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="704" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rvl-aN-RNg"/>
                                     <barButtonItem title="Item" image="playpause" catalog="system" id="LZy-g4-TQY" userLabel="Play Button">
@@ -140,13 +140,29 @@
                                     <constraint firstAttribute="height" constant="35" id="7iR-ih-1cQ"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BCo-It-S0Z">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BCo-It-S0Z" userLabel="About TextView">
                                 <rect key="frame" x="20" y="493" width="335" height="285"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="285" id="b3X-x6-vSk"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">Developed by John Conway in 1970, the Game of Life is a cellular-automaton, zero-player game. A game in the lightest sense as there is no user interaction beyond the initial starting conditions and neither is there an end.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aBJ-Sh-gdz" userLabel="Rules TextView">
+                                <rect key="frame" x="20" y="148" width="335" height="278"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">The game takes place on a grid of cells. Each cell can either be alive or dead. Four simple rules determine the vitality of each cell.
+
+1. Any live cell with fewer than two live neighbors will die.
+
+2. Any live cell with two or three live neighbors will live on to the next generation.
+
+3. Any live cell with more than three live neighbors will die.
+
+4. Any dead cell with exactly three live neighbors will become a live cell.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -156,10 +172,14 @@
                         <constraints>
                             <constraint firstItem="BCo-It-S0Z" firstAttribute="top" secondItem="hWu-qB-Dib" secondAttribute="bottom" constant="2" id="57K-7T-c7s"/>
                             <constraint firstItem="BCo-It-S0Z" firstAttribute="leading" secondItem="Ag2-8Z-sWr" secondAttribute="leading" constant="20" id="VK3-Tu-fzu"/>
+                            <constraint firstItem="Ag2-8Z-sWr" firstAttribute="trailing" secondItem="aBJ-Sh-gdz" secondAttribute="trailing" constant="20" id="Yfx-Tg-TKf"/>
+                            <constraint firstItem="aBJ-Sh-gdz" firstAttribute="leading" secondItem="Ag2-8Z-sWr" secondAttribute="leading" constant="20" id="Yva-SE-wn7"/>
                             <constraint firstItem="Ag2-8Z-sWr" firstAttribute="trailing" secondItem="hWu-qB-Dib" secondAttribute="trailing" constant="20" id="dAi-zC-HWK"/>
                             <constraint firstItem="774-02-Bgy" firstAttribute="top" secondItem="6Fd-49-BDQ" secondAttribute="top" constant="80" id="dor-h4-lag"/>
                             <constraint firstItem="774-02-Bgy" firstAttribute="centerX" secondItem="6Fd-49-BDQ" secondAttribute="centerX" id="eGl-j8-Kh6"/>
+                            <constraint firstItem="hWu-qB-Dib" firstAttribute="top" secondItem="aBJ-Sh-gdz" secondAttribute="bottom" constant="30" id="ie0-7A-7Sh"/>
                             <constraint firstItem="BCo-It-S0Z" firstAttribute="bottom" secondItem="Ag2-8Z-sWr" secondAttribute="bottom" id="mId-lK-d3G"/>
+                            <constraint firstItem="aBJ-Sh-gdz" firstAttribute="top" secondItem="Ag2-8Z-sWr" secondAttribute="top" constant="8" id="oob-no-eDZ"/>
                             <constraint firstItem="Ag2-8Z-sWr" firstAttribute="trailing" secondItem="BCo-It-S0Z" secondAttribute="trailing" constant="20" id="wcH-fB-e55"/>
                             <constraint firstItem="hWu-qB-Dib" firstAttribute="leading" secondItem="Ag2-8Z-sWr" secondAttribute="leading" constant="20" id="xLy-H2-shq"/>
                         </constraints>
@@ -169,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdj-gl-kKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824.6376811594205" y="135.9375"/>
+            <point key="canvasLocation" x="1823.2" y="135.22167487684729"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8gz-jr-dfd">

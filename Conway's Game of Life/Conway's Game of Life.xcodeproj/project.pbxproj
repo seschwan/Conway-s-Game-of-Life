@@ -56,12 +56,11 @@
 		EF7A9E6A249A82C2000B71C1 /* Conway's Game of Life */ = {
 			isa = PBXGroup;
 			children = (
+				EFA0453E249C6945005352F4 /* Model */,
+				EFA0453F249C6967005352F4 /* Model Controller */,
 				EFA0453B249C4CB5005352F4 /* View Controllers */,
-				EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */,
-				EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */,
-				EF7A9E71249A82C2000B71C1 /* Main.storyboard */,
-				EF7A9E74249A82C3000B71C1 /* Assets.xcassets */,
-				EF7A9E76249A82C3000B71C1 /* LaunchScreen.storyboard */,
+				EFA04540249C6983005352F4 /* Storyboards */,
+				EFA04541249C69DA005352F4 /* Resources */,
 				EF7A9E79249A82C3000B71C1 /* Info.plist */,
 			);
 			path = "Conway's Game of Life";
@@ -73,6 +72,39 @@
 				EFA0453C249C4D1F005352F4 /* GameVC.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EFA0453E249C6945005352F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFA0453F249C6967005352F4 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		EFA04540249C6983005352F4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EF7A9E71249A82C2000B71C1 /* Main.storyboard */,
+				EF7A9E76249A82C3000B71C1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EFA04541249C69DA005352F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */,
+				EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */,
+				EF7A9E74249A82C3000B71C1 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
