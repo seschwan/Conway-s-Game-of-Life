@@ -31,7 +31,15 @@ class GameVC: UIViewController {
     
     
     @IBAction func playPauseBtnPressed(_ sender: UIBarButtonItem) {
+        DispatchQueue.main.async {
+            for _ in 0...5 {
+                self.world.updateCells()
+            }
+        }
         
+        collectionView.reloadData()
+        
+       
         
     }
     
