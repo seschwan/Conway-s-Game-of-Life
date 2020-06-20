@@ -16,7 +16,9 @@ class GameVC: UIViewController {
     
     @IBOutlet weak var playBtn: UIBarButtonItem!
     
-    let cellArray = Array(repeating: 0, count: 625)
+    //let cellArray = Array(repeating: 0, count: 625)
+    
+    let world = World(size: 25)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,22 +44,31 @@ class GameVC: UIViewController {
 extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellArray.count
+        return self.world.cells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
-        collectionCell.layer.backgroundColor = UIColor.systemRed.cgColor
+        let singleCell = world.cells[indexPath.item]
         
-        let individualCell = cellArray[indexPath.item]
-        for cell in 0...individualCell {
-            collectionCell.layer.backgroundColor = UIColor.systemBlue.cgColor
+        //self.world.updateCells()
+        
+        for _ in world.cells {
+           
+            if singleCell.state == State.alive {
+                collectionCell.layer.backgroundColor = UIColor.systemRed.cgColor
+            } else {
+                collectionCell.layer.backgroundColor = UIColor.systemGray.cgColor
+            }
         }
+        
         
         
         return collectionCell
     }
+    
+    
     
     
     

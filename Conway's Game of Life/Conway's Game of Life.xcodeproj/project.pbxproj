@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF7410C8249DAE1B009C0A89 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7410C7249DAE1B009C0A89 /* Cell.swift */; };
+		EF7410CA249DAF95009C0A89 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7410C9249DAF95009C0A89 /* World.swift */; };
 		EF7A9E6C249A82C2000B71C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */; };
 		EF7A9E6E249A82C2000B71C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */; };
 		EF7A9E73249A82C2000B71C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7A9E71249A82C2000B71C1 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF7410C7249DAE1B009C0A89 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		EF7410C9249DAF95009C0A89 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		EF7A9E68249A82C2000B71C1 /* Conway's Game of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Conway's Game of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		EFA0453E249C6945005352F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF7410C7249DAE1B009C0A89 /* Cell.swift */,
+				EF7410C9249DAF95009C0A89 /* World.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,8 +185,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7A9E6C249A82C2000B71C1 /* AppDelegate.swift in Sources */,
+				EF7410C8249DAE1B009C0A89 /* Cell.swift in Sources */,
 				EFA0453D249C4D1F005352F4 /* GameVC.swift in Sources */,
 				EF7A9E6E249A82C2000B71C1 /* SceneDelegate.swift in Sources */,
+				EF7410CA249DAF95009C0A89 /* World.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
