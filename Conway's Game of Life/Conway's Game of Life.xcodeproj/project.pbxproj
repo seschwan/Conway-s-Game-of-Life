@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF7410C8249DAE1B009C0A89 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7410C7249DAE1B009C0A89 /* Cell.swift */; };
+		EF7410CA249DAF95009C0A89 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7410C9249DAF95009C0A89 /* World.swift */; };
 		EF7A9E6C249A82C2000B71C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */; };
 		EF7A9E6E249A82C2000B71C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */; };
-		EF7A9E70249A82C2000B71C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7A9E6F249A82C2000B71C1 /* ViewController.swift */; };
 		EF7A9E73249A82C2000B71C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7A9E71249A82C2000B71C1 /* Main.storyboard */; };
 		EF7A9E75249A82C3000B71C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF7A9E74249A82C3000B71C1 /* Assets.xcassets */; };
 		EF7A9E78249A82C3000B71C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7A9E76249A82C3000B71C1 /* LaunchScreen.storyboard */; };
+		EFA0453D249C4D1F005352F4 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0453C249C4D1F005352F4 /* GameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF7410C7249DAE1B009C0A89 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		EF7410C9249DAF95009C0A89 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		EF7A9E68249A82C2000B71C1 /* Conway's Game of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Conway's Game of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF7A9E6F249A82C2000B71C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF7A9E72249A82C2000B71C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF7A9E74249A82C3000B71C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF7A9E77249A82C3000B71C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF7A9E79249A82C3000B71C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFA0453C249C4D1F005352F4 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		EF7A9E6A249A82C2000B71C1 /* Conway's Game of Life */ = {
 			isa = PBXGroup;
 			children = (
-				EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */,
-				EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */,
-				EF7A9E6F249A82C2000B71C1 /* ViewController.swift */,
-				EF7A9E71249A82C2000B71C1 /* Main.storyboard */,
-				EF7A9E74249A82C3000B71C1 /* Assets.xcassets */,
-				EF7A9E76249A82C3000B71C1 /* LaunchScreen.storyboard */,
+				EFA0453E249C6945005352F4 /* Model */,
+				EFA0453F249C6967005352F4 /* Model Controller */,
+				EFA0453B249C4CB5005352F4 /* View Controllers */,
+				EFA04540249C6983005352F4 /* Storyboards */,
+				EFA04541249C69DA005352F4 /* Resources */,
 				EF7A9E79249A82C3000B71C1 /* Info.plist */,
 			);
 			path = "Conway's Game of Life";
+			sourceTree = "<group>";
+		};
+		EFA0453B249C4CB5005352F4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFA0453C249C4D1F005352F4 /* GameVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EFA0453E249C6945005352F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF7410C7249DAE1B009C0A89 /* Cell.swift */,
+				EF7410C9249DAF95009C0A89 /* World.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFA0453F249C6967005352F4 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		EFA04540249C6983005352F4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EF7A9E71249A82C2000B71C1 /* Main.storyboard */,
+				EF7A9E76249A82C3000B71C1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EFA04541249C69DA005352F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF7A9E6D249A82C2000B71C1 /* SceneDelegate.swift */,
+				EF7A9E6B249A82C2000B71C1 /* AppDelegate.swift */,
+				EF7A9E74249A82C3000B71C1 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF7A9E70249A82C2000B71C1 /* ViewController.swift in Sources */,
 				EF7A9E6C249A82C2000B71C1 /* AppDelegate.swift in Sources */,
+				EF7410C8249DAE1B009C0A89 /* Cell.swift in Sources */,
+				EFA0453D249C4D1F005352F4 /* GameVC.swift in Sources */,
 				EF7A9E6E249A82C2000B71C1 /* SceneDelegate.swift in Sources */,
+				EF7410CA249DAF95009C0A89 /* World.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
