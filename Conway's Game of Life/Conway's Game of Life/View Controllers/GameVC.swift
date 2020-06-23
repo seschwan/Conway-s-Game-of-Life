@@ -18,33 +18,47 @@ class GameVC: UIViewController {
     
     //let cellArray = Array(repeating: 0, count: 625)
     
-    let world = World(size: 25)
+    var world = World(size: 25)
+    
+    var generationCount = 0 {
+        didSet {
+            generationLbl.text = String(generationCount)
+        }
+    }
+    
+    var startStop = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        generationLbl.text = String(generationCount)
 
     }
     
-    
+    func autoRun(run: Bool) {
+        if startStop {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.world.updateCells()
+                self.collectionView.reloadData()
+                self.generationCount += 1
+                self.autoRun(run: run)
+            }
+        }
+    }
     
     
     @IBAction func playPauseBtnPressed(_ sender: UIBarButtonItem) {
-        DispatchQueue.main.async {
-            for _ in 0...5 {
-                self.world.updateCells()
-            }
-        }
-        
-        collectionView.reloadData()
-        
-       
-        
+        startStop.toggle()
+        autoRun(run: startStop)
     }
     
     @IBAction func stopBtnPressed(_ sender: UIBarButtonItem) {
-        
+        startStop = false
+        world = World(size: 25)
+        world.updateCells()
+        collectionView.reloadData()
+        generationCount = 0
         
     }
 }
@@ -60,16 +74,7 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         let singleCell = world.cells[indexPath.item]
         
-        //self.world.updateCells()
-        
-        for _ in world.cells {
-           
-            if singleCell.state == State.alive {
-                collectionCell.layer.backgroundColor = UIColor.systemRed.cgColor
-            } else {
-                collectionCell.layer.backgroundColor = UIColor.systemGray.cgColor
-            }
-        }
+        collectionCell.layer.backgroundColor = singleCell.state == .alive ? UIColor.systemRed.cgColor : UIColor.systemGray.cgColor
         
         
         
