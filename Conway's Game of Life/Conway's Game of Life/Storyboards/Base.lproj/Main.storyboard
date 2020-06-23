@@ -48,6 +48,12 @@
                                             <action selector="playPauseBtnPressed:" destination="BYZ-38-t0r" id="Bsc-Ji-gMH"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FOU-Vh-1dH"/>
+                                    <barButtonItem title="Step 1X" id="8MO-jM-Z1q">
+                                        <connections>
+                                            <action selector="stepOneTimeBtnPressed:" destination="BYZ-38-t0r" id="XZV-3V-WnV"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NHJ-h1-kdl"/>
                                     <barButtonItem title="Item" image="stop" catalog="system" id="xlh-id-QX9" userLabel="Stop Button">
                                         <connections>

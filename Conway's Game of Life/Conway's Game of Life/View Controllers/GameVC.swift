@@ -61,6 +61,14 @@ class GameVC: UIViewController {
         generationCount = 0
         
     }
+    
+    @IBAction func stepOneTimeBtnPressed(_ sender: UIBarButtonItem) {
+        startStop = false
+        world.updateCells()
+        collectionView.reloadData()
+        generationCount += 1
+    }
+    
 }
 
 extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -75,7 +83,7 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let singleCell = world.cells[indexPath.item]
         
         collectionCell.layer.backgroundColor = singleCell.state == .alive ? UIColor.systemRed.cgColor : UIColor.systemGray.cgColor
-        
+        //collectionCell.layer.cornerRadius = collectionCell.bounds.height / 2
         
         
         return collectionCell
