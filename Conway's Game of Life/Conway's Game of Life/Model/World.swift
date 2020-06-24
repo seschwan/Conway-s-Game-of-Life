@@ -12,6 +12,7 @@ public class World {
     public var cells = [Cell]()
     public let size: Int
     
+    
     public init(size: Int) {
         self.size = size
         
@@ -24,7 +25,7 @@ public class World {
         }
     }
     
-    
+    // Double Buffer
     public func updateCells() {
         var updatedCells = [Cell]()
         let liveCells = cells.filter { $0.state == .alive}
@@ -42,8 +43,10 @@ public class World {
                 let deadCell = Cell(x: cell.x, y: cell.y, state: .dead)
                 updatedCells.append(deadCell)
             }
+            
         }
         
         cells = updatedCells
     }
+    
 }

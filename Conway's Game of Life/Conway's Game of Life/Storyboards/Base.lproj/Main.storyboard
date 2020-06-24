@@ -48,10 +48,22 @@
                                             <action selector="playPauseBtnPressed:" destination="BYZ-38-t0r" id="Bsc-Ji-gMH"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FOU-Vh-1dH"/>
+                                    <barButtonItem title="Step 1X" id="8MO-jM-Z1q">
+                                        <connections>
+                                            <action selector="stepOneTimeBtnPressed:" destination="BYZ-38-t0r" id="XZV-3V-WnV"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NHJ-h1-kdl"/>
-                                    <barButtonItem title="Item" image="stop" catalog="system" id="xlh-id-QX9" userLabel="Stop Button">
+                                    <barButtonItem title="Reset" id="xlh-id-QX9" userLabel="Stop Button">
                                         <connections>
                                             <action selector="stopBtnPressed:" destination="BYZ-38-t0r" id="sUg-X9-t1q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rVR-TC-4tM"/>
+                                    <barButtonItem title="Clear" id="5se-oZ-hRh">
+                                        <connections>
+                                            <action selector="clearBtnPressed:" destination="BYZ-38-t0r" id="e50-3x-vAs"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gZb-XX-hQ4"/>
@@ -83,10 +95,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo4-QV-izc">
+                                <rect key="frame" x="0.0" y="660" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XIl-8r-rlX"/>
+                                    <barButtonItem title="Blinker" id="M16-R3-HhU">
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="blinkerBtnPressed:" destination="BYZ-38-t0r" id="6at-oF-4gD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B5F-vL-eD7"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="mo4-QV-izc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0ig-V2-LbY"/>
                             <constraint firstItem="GXs-yw-ics" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4CT-IW-ktG"/>
+                            <constraint firstItem="mo4-QV-izc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Tr-8U-ezR"/>
                             <constraint firstItem="dqH-67-PmT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="4Y7-WE-a38"/>
                             <constraint firstItem="DUg-Bw-hvE" firstAttribute="top" secondItem="907-k8-BND" secondAttribute="bottom" constant="20" id="6IQ-Yd-Mkq"/>
                             <constraint firstItem="DUg-Bw-hvE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F99-br-EBx"/>
@@ -96,6 +124,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dqH-67-PmT" secondAttribute="trailing" constant="50" id="cap-If-gyg"/>
                             <constraint firstItem="dqH-67-PmT" firstAttribute="top" secondItem="DUg-Bw-hvE" secondAttribute="bottom" constant="14" id="e4c-56-ncT"/>
                             <constraint firstItem="907-k8-BND" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="80" id="k4M-5T-RQt"/>
+                            <constraint firstItem="GXs-yw-ics" firstAttribute="top" secondItem="mo4-QV-izc" secondAttribute="bottom" id="pA3-PE-d1T"/>
                             <constraint firstItem="GXs-yw-ics" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rnk-4j-V2O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -222,6 +251,5 @@
         <image name="Rules" width="193" height="57"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="playpause" catalog="system" width="128" height="83"/>
-        <image name="stop" catalog="system" width="128" height="113"/>
     </resources>
 </document>

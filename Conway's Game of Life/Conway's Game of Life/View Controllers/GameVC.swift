@@ -16,29 +16,96 @@ class GameVC: UIViewController {
     
     @IBOutlet weak var playBtn: UIBarButtonItem!
     
+    let generator = UINotificationFeedbackGenerator()
+    
     //let cellArray = Array(repeating: 0, count: 625)
     
-    let world = World(size: 25)
+    var world = World(size: 25)
+    
+    var generationCount = 0 {
+        didSet {
+            generationLbl.text = String(generationCount)
+        }
+    }
+    
+    var startStop = Bool()
+    var isBlinking = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        generationLbl.text = String(generationCount)
+        generator.prepare()
 
     }
     
+    func autoRun(run: Bool) {
+        if startStop {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.world.updateCells()
+                self.collectionView.reloadData()
+                self.generationCount += 1
+                self.autoRun(run: run)
+            }
+        }
+    }
     
     
+    // MARK: - Button Actions
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        startStop = false
+        world = World(size: 25)
+        world.updateCells()
+        collectionView.reloadData()
+        generationCount = 0
+        generator.notificationOccurred(.success)
+    }
     
     @IBAction func playPauseBtnPressed(_ sender: UIBarButtonItem) {
-        
-        
+        startStop.toggle()
+        autoRun(run: startStop)
+        generator.notificationOccurred(.success)
     }
     
     @IBAction func stopBtnPressed(_ sender: UIBarButtonItem) {
-        
+        startStop = false
+        world = World(size: 25)
+        world.updateCells()
+        collectionView.reloadData()
+        generationCount = 0
+        generator.notificationOccurred(.success)
         
     }
+    
+    @IBAction func stepOneTimeBtnPressed(_ sender: UIBarButtonItem) {
+        startStop = false
+        world.updateCells()
+        collectionView.reloadData()
+        generationCount += 1
+        generator.notificationOccurred(.success)
+    }
+    @IBAction func clearBtnPressed(_ sender: UIBarButtonItem) {
+        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
+        collectionView.reloadData()
+    }
+    
+    // MARK: - Oscillators
+    
+    @IBAction func blinkerBtnPressed(_ sender: UIBarButtonItem) {
+        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
+        
+        self.world.cells[312].state = .alive
+        self.world.cells[311].state = .alive
+        self.world.cells[313].state = .alive
+        collectionView.reloadData()
+        
+        startStop = true
+        autoRun(run: startStop)
+        
+    }
+    
 }
 
 extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -52,17 +119,8 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         let singleCell = world.cells[indexPath.item]
         
-        //self.world.updateCells()
-        
-        for _ in world.cells {
-           
-            if singleCell.state == State.alive {
-                collectionCell.layer.backgroundColor = UIColor.systemRed.cgColor
-            } else {
-                collectionCell.layer.backgroundColor = UIColor.systemGray.cgColor
-            }
-        }
-        
+        collectionCell.layer.backgroundColor = singleCell.state == .alive ? UIColor.systemRed.cgColor : UIColor.systemGray.cgColor
+        collectionCell.layer.cornerRadius = collectionCell.bounds.height / 4
         
         
         return collectionCell
