@@ -16,6 +16,8 @@ class GameVC: UIViewController {
     
     @IBOutlet weak var playBtn: UIBarButtonItem!
     
+    let generator = UINotificationFeedbackGenerator()
+    
     //let cellArray = Array(repeating: 0, count: 625)
     
     var world = World(size: 25)
@@ -27,12 +29,14 @@ class GameVC: UIViewController {
     }
     
     var startStop = Bool()
+    var isBlinking = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         generationLbl.text = String(generationCount)
+        generator.prepare()
 
     }
     
@@ -48,9 +52,21 @@ class GameVC: UIViewController {
     }
     
     
+    // MARK: - Button Actions
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        startStop = false
+        world = World(size: 25)
+        world.updateCells()
+        collectionView.reloadData()
+        generationCount = 0
+        generator.notificationOccurred(.success)
+    }
+    
     @IBAction func playPauseBtnPressed(_ sender: UIBarButtonItem) {
         startStop.toggle()
         autoRun(run: startStop)
+        generator.notificationOccurred(.success)
     }
     
     @IBAction func stopBtnPressed(_ sender: UIBarButtonItem) {
@@ -59,6 +75,7 @@ class GameVC: UIViewController {
         world.updateCells()
         collectionView.reloadData()
         generationCount = 0
+        generator.notificationOccurred(.success)
         
     }
     
@@ -67,7 +84,82 @@ class GameVC: UIViewController {
         world.updateCells()
         collectionView.reloadData()
         generationCount += 1
+        generator.notificationOccurred(.success)
     }
+    
+    // MARK: - Oscillators
+    
+    @IBAction func blinkerBtnPressed(_ sender: UIBarButtonItem) {
+        isBlinking = true
+        //world.blinkerOscillation(isBlinking: isBlinking)
+        blinkerSetup(run: isBlinking)
+        
+        collectionView.reloadData()
+        
+    }
+    // Make 2 functions for H and V and then recursively call each one.
+    // Make an H line with cells and then just updateCells
+    
+    func blinkerSetup(run: Bool) {
+        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
+        world.cells[312].state = .alive
+        
+        if isBlinking {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                
+                self.world.cells[311].state = .alive
+                self.world.cells[313].state = .alive
+            
+                self.world.cells[311].state = .dead
+                self.world.cells[313].state = .dead
+            
+                
+                self.world.cells[287].state = .alive
+                self.world.cells[337].state = .alive
+            
+                self.world.cells[287].state = .dead
+                self.world.cells[337].state = .dead
+            
+                
+                self.world.cells[311].state = .alive
+                self.world.cells[313].state = .alive
+            
+                self.world.cells[311].state = .dead
+                self.world.cells[313].state = .dead
+            
+                
+                self.world.cells[287].state = .alive
+                self.world.cells[337].state = .alive
+            
+                self.world.cells[287].state = .dead
+                self.world.cells[337].state = .dead
+                
+                self.collectionView.reloadData()
+            }
+            
+            
+            
+            
+        }
+            
+        
+        
+        
+//        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
+//        world.cells[311].state = .alive
+//        world.cells[313].state = .alive
+//
+//        world.cells[312].state = .alive
+//
+//        world.cells[287].state = .alive
+//        world.cells[337].state = .alive
+        
+//        isBlinking = true
+//        world.blinkerOscillation(isBlinking: isBlinking)
+        //collectionView.reloadData()
+       
+    }
+    
     
 }
 
@@ -83,7 +175,7 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let singleCell = world.cells[indexPath.item]
         
         collectionCell.layer.backgroundColor = singleCell.state == .alive ? UIColor.systemRed.cgColor : UIColor.systemGray.cgColor
-        //collectionCell.layer.cornerRadius = collectionCell.bounds.height / 2
+        collectionCell.layer.cornerRadius = collectionCell.bounds.height / 4
         
         
         return collectionCell
