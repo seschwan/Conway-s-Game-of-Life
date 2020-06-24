@@ -86,80 +86,25 @@ class GameVC: UIViewController {
         generationCount += 1
         generator.notificationOccurred(.success)
     }
+    @IBAction func clearBtnPressed(_ sender: UIBarButtonItem) {
+        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
+        collectionView.reloadData()
+    }
     
     // MARK: - Oscillators
     
     @IBAction func blinkerBtnPressed(_ sender: UIBarButtonItem) {
-        isBlinking = true
-        //world.blinkerOscillation(isBlinking: isBlinking)
-        blinkerSetup(run: isBlinking)
+        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
         
+        self.world.cells[312].state = .alive
+        self.world.cells[311].state = .alive
+        self.world.cells[313].state = .alive
         collectionView.reloadData()
         
+        startStop = true
+        autoRun(run: startStop)
+        
     }
-    // Make 2 functions for H and V and then recursively call each one.
-    // Make an H line with cells and then just updateCells
-    
-    func blinkerSetup(run: Bool) {
-        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
-        world.cells[312].state = .alive
-        
-        if isBlinking {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                
-                self.world.cells[311].state = .alive
-                self.world.cells[313].state = .alive
-            
-                self.world.cells[311].state = .dead
-                self.world.cells[313].state = .dead
-            
-                
-                self.world.cells[287].state = .alive
-                self.world.cells[337].state = .alive
-            
-                self.world.cells[287].state = .dead
-                self.world.cells[337].state = .dead
-            
-                
-                self.world.cells[311].state = .alive
-                self.world.cells[313].state = .alive
-            
-                self.world.cells[311].state = .dead
-                self.world.cells[313].state = .dead
-            
-                
-                self.world.cells[287].state = .alive
-                self.world.cells[337].state = .alive
-            
-                self.world.cells[287].state = .dead
-                self.world.cells[337].state = .dead
-                
-                self.collectionView.reloadData()
-            }
-            
-            
-            
-            
-        }
-            
-        
-        
-        
-//        world.cells = Array(repeating: Cell(x: 0, y: 0, state: .dead), count: 625)
-//        world.cells[311].state = .alive
-//        world.cells[313].state = .alive
-//
-//        world.cells[312].state = .alive
-//
-//        world.cells[287].state = .alive
-//        world.cells[337].state = .alive
-        
-//        isBlinking = true
-//        world.blinkerOscillation(isBlinking: isBlinking)
-        //collectionView.reloadData()
-       
-    }
-    
     
 }
 

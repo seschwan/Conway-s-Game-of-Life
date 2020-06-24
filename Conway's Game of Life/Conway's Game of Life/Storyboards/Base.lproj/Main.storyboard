@@ -55,9 +55,15 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NHJ-h1-kdl"/>
-                                    <barButtonItem title="Item" image="stop" catalog="system" id="xlh-id-QX9" userLabel="Stop Button">
+                                    <barButtonItem title="Reset" id="xlh-id-QX9" userLabel="Stop Button">
                                         <connections>
                                             <action selector="stopBtnPressed:" destination="BYZ-38-t0r" id="sUg-X9-t1q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rVR-TC-4tM"/>
+                                    <barButtonItem title="Clear" id="5se-oZ-hRh">
+                                        <connections>
+                                            <action selector="clearBtnPressed:" destination="BYZ-38-t0r" id="e50-3x-vAs"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gZb-XX-hQ4"/>
@@ -245,6 +251,5 @@
         <image name="Rules" width="193" height="57"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="playpause" catalog="system" width="128" height="83"/>
-        <image name="stop" catalog="system" width="128" height="113"/>
     </resources>
 </document>
