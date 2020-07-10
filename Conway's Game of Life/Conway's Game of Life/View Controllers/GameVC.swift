@@ -18,8 +18,6 @@ class GameVC: UIViewController {
     
     let generator = UINotificationFeedbackGenerator()
     
-    //let cellArray = Array(repeating: 0, count: 625)
-    
     var world = World(size: 25)
     
     var generationCount = 0 {
@@ -54,6 +52,7 @@ class GameVC: UIViewController {
     
     // MARK: - Button Actions
     
+    // Shake to reset the board.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         startStop = false
         world = World(size: 25)
